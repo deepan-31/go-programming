@@ -1,3 +1,3 @@
-module example/project
+module ap
 
 go 1.20
