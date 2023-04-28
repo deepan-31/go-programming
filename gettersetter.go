@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 )
@@ -15,4 +16,20 @@ func IntArrToStrArr(intArr []int) []string {
 		strArr = append(strArr, strconv.Itoa(i))
 	}
 	return strArr
+}
+
+type Date struct {
+	day   int
+	month int
+	year  int
+}
+
+func (d *Date) SetDaY(day int) error {
+
+	if (day < 1) || (day > 31) {
+		return errors.New("Incorrect day")
+	}
+	d.day = day
+	return nil
+
 }
